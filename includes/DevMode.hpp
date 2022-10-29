@@ -14,19 +14,19 @@
 
 #include <iostream>
 #include <vector>
+#include "FileWatcher.hpp"
 
 # define STRING std::string
 
 class DevMode {
     private:
         std::vector<STRING>             filePaths_;
-        int                             fdIn[2];
-        int                             fdOut[2];
-        pid_t                           pid;
         char**                          env_;
+        char *                          newargv[];
 
     public:
         DevMode();
+        DevMode(char ** env);
         ~DevMode();
 
         std::vector<STRING> const &  getFileNames() const;
@@ -35,7 +35,7 @@ class DevMode {
         void                         setDirPaths();
 
         void                         checkChangesInFile();
-        int                          execute(STRING command);
+        int                          executeMake(STRING command);
         int                          parentProcess();
         void                         childProcess(STRING command);
 };
