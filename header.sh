@@ -1,7 +1,7 @@
 #!/bin/bash
 # ./set_header.sh
 
-# Set variables
+#   § Set variables
 
 if [ ! -z "$USER" ]
 then
