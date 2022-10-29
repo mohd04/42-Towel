@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 git clone https://github.com/ombhd/Cleaner_42.git
 
@@ -7,9 +7,8 @@ git clone https://github.com/ombhd/Cleaner_42.git
 shell_f=$(echo -n "$SHELL" | awk -F / '{print $3}')
 
 shell_f="${HOME}/.${shell_f}rc"
-
-if ! grep "alias cclean='bash ${PWD}/Cleaner_42/CCleaner_42.sh'" <"$shell_f" &>/dev/null; then
-	echo -e "\nalias cclean='bash ${PWD}/Cleaner_42/Cleaner_42.sh'" >>"$shell_f"
+mv ./Cleaner_42/Cleaner_42.sh ~
+if ! grep "alias cclean='bash ~/Cleaner_42.sh'" <"$shell_f" &>/dev/null; then
+	echo -e "\nalias cclean='bash ~/Cleaner_42.sh'" >>"$shell_f"
 fi
-
-source $shell_f
+rm -rf Cleaner_42

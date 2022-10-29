@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 git clone https://github.com/lorenuars19/CPP-Project-Template.git
 cd CPP-Project-Template
