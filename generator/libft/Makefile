@@ -91,17 +91,16 @@ CREATE_OBJS_DIR:
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c
-	@echo "\n\r\033[3A\033[0K\t$(RESET)[$(GREEN)✓$(RESET)]   $(IYELLOW)generating $@\n$(RESET)"
 	@$(CXX) ${CXX_FLAGS} -c $< -o $@
 
 header:
 	@printf "\n%b" "$(RESET)"
 	@echo
-	@printf "\t\t\t$(PURPLE)#################################################################\n\n$(RESET)"
-	@printf "\t\t\t\t$(LIGHT_BLUE)Intra Login\t\t:\t\t$(WHITE)%b\n$(RESET)" "$(Intra_Login)"
-	@printf "\t\t\t\t$(LIGHT_BLUE)NAME\t\t\t:\t\t$(WHITE)%b\n$(RESET)" "$(PROJECT_NAME)"
-	@printf "\t\t\t\t$(LIGHT_BLUE)DATE\t\t\t:\t\t$(WHITE)%b\n\n$(RESET)" "$(DATE)"
-	@printf "\t\t\t$(PURPLE)#################################################################\n\n$(RESET)"
+	@printf "\t$(PURPLE)#################################################################\n\n$(RESET)"
+	@printf "\t\t$(LIGHT_BLUE)Intra Login\t\t:\t\t$(WHITE)%b\n$(RESET)" "$(Intra_Login)"
+	@printf "\t\t$(LIGHT_BLUE)NAME\t\t\t:\t\t$(WHITE)%b\n$(RESET)" "$(PROJECT_NAME)"
+	@printf "\t\t$(LIGHT_BLUE)DATE\t\t\t:\t\t$(WHITE)%b\n\n$(RESET)" "$(DATE)"
+	@printf "\t$(PURPLE)#################################################################\n\n$(RESET)"
 	@echo "\t$(BYELLOW)LOADING...$(RESET)\n"
 
 footer:
@@ -131,6 +130,10 @@ cleandev:
 	@rm -rf $(OBJS_DIR)
 	@rm -rf $(NAME)
 
-redev: $(NAME)
+redev: cleandev CREATE_OBJS_DIR $(OBJS_FILES)
+	@$(CXX) ${CXX_FLAGS} $(OBJS_FILES) -o $(NAME)
+	@./$(NAME)
+	@echo
+	@./a.out srcs includes .
 
 .PHONY: all clean fclean re

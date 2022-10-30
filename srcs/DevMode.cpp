@@ -46,7 +46,7 @@ int    DevMode::executeMake() {
 
     newargv = new char*[2];
     newargv[0] = strdup("make");
-    newargv[1] = strdup("re");
+    newargv[1] = strdup("redev");
     newargv[2] = NULL;
 
     chdir(makefile_path_.c_str());
