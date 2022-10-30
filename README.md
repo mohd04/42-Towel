@@ -1,7 +1,7 @@
 # 42-Towel
 
 ## Idea Description
-Towel is a tool for 42 Students to automate their project development process by using a script.
+A tool for 42 students to use when working on a C/C++ project. The tool will allow the users to run scripts that will help during the development process.
 
 ## Instructions
 Clone the repository.
