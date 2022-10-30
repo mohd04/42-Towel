@@ -83,24 +83,12 @@ NAME = test
 
 all: header $(NAME) footer
 
-## always run generate once before anything to create the structure
-generate: CREATE_MAIN_DIRS CREATE_MAIN_C
-
 $(NAME): CREATE_OBJS_DIR $(OBJS_FILES)
 	@$(CXX) ${CXX_FLAGS} $(OBJS_FILES) -o $(NAME)
 	@echo "\n\r\033[3A\033[0K\t$(RESET)[$(GREEN)✓$(RESET)]   $(IYELLOW)DONE\n$(RESET)"
 
 CREATE_OBJS_DIR:
 	@mkdir -p $(OBJS_DIR)
-
-CREATE_MAIN_DIRS:
-	@mkdir -p $(SRCS_DIR)
-	@mkdir -p $(INCLUDES_DIR)
-	@touch $(SRCS_DIR)main.c
-	@echo "\n\r\033[3A\033[0K\t$(RESET)[$(GREEN)✓$(RESET)]   $(IYELLOW)Creating Directories\n$(RESET)"
-
-CREATE_MAIN_C:
-	@echo '#include\t<stdio.h>\n\nint\tmain(void)\n{\n\tprintf("Hello World!");\n\treturn (0);\n}' > $(SRCS_DIR)main.c
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c
 	@echo "\n\r\033[3A\033[0K\t$(RESET)[$(GREEN)✓$(RESET)]   $(IYELLOW)generating $@\n$(RESET)"
