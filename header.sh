@@ -1,7 +1,4 @@
 #!/bin/bash
-# ./set_header.sh
-
-#   § Set variables
 
 if [ ! -z "$USER" ]
 then
@@ -26,4 +23,5 @@ mkdir -p ~/.vim/plugin
 # Add stdheader to vim plugins
 cp plugin/stdheader.vim ~/.vim/plugin/
 
-source ~/.zshrc
+
+echo -e "run $ source ~/.zshrc"
