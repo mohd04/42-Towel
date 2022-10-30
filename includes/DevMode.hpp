@@ -25,10 +25,11 @@ class DevMode {
         char**                          env_;
         STRING                          src_dir_;
         STRING                          incl_dir_;
+        STRING                          makefile_path_;
 
     public:
         DevMode();
-        DevMode(char ** env, char * src_dir, char * incl_dir);
+        DevMode(char ** env, char * src_dir, char * incl_dir, char * makefile_path);
         ~DevMode();
 
         std::vector<STRING> const &  getFileNames() const;
