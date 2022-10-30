@@ -2,7 +2,7 @@
 
 DevMode::DevMode() { }
 
-DevMode::DevMode(char **env, char * src_dir, char * incl_dir) : env_(env), src_dir_(src_dir), incl_dir_(incl_dir) {
+DevMode::DevMode(char **env, char * src_dir, char * incl_dir, char * makefile_path) : env_(env), src_dir_(src_dir), incl_dir_(incl_dir), makefile_path_(makefile_path) {
 }
 
 DevMode::~DevMode() { }
@@ -20,15 +20,15 @@ void                    DevMode::checkChangesInFile() {
 
         switch(status) {
             case FileStatus::created:
-                std::cout << "File created: " << path_to_watch << '\n';
+                // std::cout << "File created: " << path_to_watch << '\n';
                 executeMake();
                 break;
             case FileStatus::modified:
-                std::cout << "File modified: " << path_to_watch << '\n';
+                // std::cout << "File modified: " << path_to_watch << '\n';
                 executeMake();
                 break;
             case FileStatus::erased:
-                std::cout << "File erased: " << path_to_watch << '\n';
+                // std::cout << "File erased: " << path_to_watch << '\n';
                 executeMake();
                 break;
             default:
@@ -49,7 +49,7 @@ int    DevMode::executeMake() {
     newargv[1] = strdup("re");
     newargv[2] = NULL;
 
-    chdir("../");
+    chdir(makefile_path_.c_str());
 
     execve("/usr/bin/make", newargv, env_);
     perror("execve");
