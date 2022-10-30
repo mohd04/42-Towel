@@ -67,7 +67,11 @@ towel cpp
 ```
 
 ### gitignore
-Enables us to hide the unwanted files through the terminal
+Enables us to hide the unwanted files through the terminal. Simply use the command:
+
+```bash
+towel gitignore
+```
 
 ### Norm
 To check for the norm, simply run in the command line: 
