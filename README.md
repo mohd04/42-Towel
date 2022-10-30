@@ -66,6 +66,9 @@ To generate C++ templates run in the command line:
 towel cpp
 ```
 
+### gitignore
+Enables us to hide the unwanted files through the terminal
+
 ### Norm
 To check for the norm, simply run in the command line: 
 
