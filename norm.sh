@@ -1,9 +1,11 @@
 #!/bin/bash
 
-norminette
-if echo $?
-then
-    echo "Failure: norm error"
+echo "Runnung norminette"
+norminette | grep Error
+norminette > /dev/null
+if [ $? -eq 1 ]; then
+    echo "Norminette: Error"
+    exit 1
 else
-    echo "Success! No norm errors"
+    echo "Norminette: Success"
 fi
