@@ -1,4 +1,4 @@
-# Towel
+# 42-Towel
 
 ## Idea Description
 A tool for 42 students to use when working on a C/C++ project. The tool will allow the users to run scripts that will help during the development process.
@@ -8,17 +8,17 @@ Mohammed Patel, Bassam Naji, Abubaker Alseri, Youssef El Toukhi
 
 Mentor - Khalifa Almheiri
 
-
 ## Instructions
 Clone the repository.
 
-### Norme
-To check for the norme, simply run in the command line: 
+### Norm
+To check for the norm, simply run in the command line: 
 
 ```bash
 towel norm
 ```
-
+By doing so, norminette will be executed. In case there are no norm errors `Norminette: Success` will be printed. However, if the norm was not ... the individual norm errors will be printed.
+ 
 ### 42-Header
 To add the 42 Header, simply run in the command line: 
 
