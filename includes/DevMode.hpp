@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdio.h>
+#include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <time.h>
@@ -22,7 +23,6 @@ class DevMode {
     private:
         std::vector<STRING>             filePaths_;
         char**                          env_;
-        char *                          newargv[];
 
     public:
         DevMode();
@@ -31,13 +31,8 @@ class DevMode {
 
         std::vector<STRING> const &  getFileNames() const;
 
-        void                         setFilePaths(STRING dirName);
-        void                         setDirPaths();
-
         void                         checkChangesInFile();
-        int                          executeMake(STRING command);
-        int                          parentProcess();
-        void                         childProcess(STRING command);
+        int                          executeMake(STRING command, STRING commandTwo);
 };
 
 #endif
