@@ -26,6 +26,7 @@ To install, run the following commad:
 ```bash
 towel dev-container
 ```
+![alt text](https://github.com/mohd04/42-Towel/blob/dev/pic/continer.png?raw=true)
 
 ### Testers Installer
 Installs the testers for the chosen project. Simply run in the command line the following command to choose which testers to clone and directly run: 
@@ -33,6 +34,9 @@ Installs the testers for the chosen project. Simply run in the command line the 
 ```bash
 towel testers
 ```
+![alt text](https://github.com/mohd04/42-Towel/blob/dev/pic/tester1.png?raw=true)
+![alt text](https://github.com/mohd04/42-Towel/blob/dev/pic/tester2.png?raw=true)
+![alt text](https://github.com/mohd04/42-Towel/blob/dev/pic/tester3.png?raw=true)
 
 ### Synced-Push
 To connect the Vogsphere with GitHub and enable simultaneous pushing to both, simply run in the command line:
@@ -83,7 +87,11 @@ Mohammed Patel, Bassam Naji, Abubaker Alseri, Youssef El Toukhi
 Mentor - Khalifa Almheiri
 ### Resources
 https://github.com/ombhd/Cleaner_42.git
+
 https://github.com/lorenuars19/CPP-Project-Template.git
+
 https://github.com/omimouni/42homebrew
+
 https://github.com/42Paris/42header
+
 https://github.com/opsec-infosec/42-Devcontainer
