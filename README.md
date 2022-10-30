@@ -1,10 +1,19 @@
 # 42-Towel
 
 ## Idea Description
-A tool for 42 students to use when working on a C/C++ project. The tool will allow the users to run scripts that will help during the development process.
+Towel is a tool for 42 Students to automate their project development process by using a script.
 
 ## Instructions
 Clone the repository.
+
+### Dev Mode
+dev mode is a tool that helps 42 Students develop 42 based projecrs by automatically restarting the project when file changes in the source and includes directory are detected.
+
+It does not require any additional changes to your code or method of development. To use dev mode, run the following commad:
+
+```bash
+towel dev
+```
 
 ### Norm
 To check for the norm, simply run in the command line: 
