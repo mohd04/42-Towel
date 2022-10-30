@@ -1,4 +1,5 @@
 norm:
+		bash norm.sh
 
 brew:
 
